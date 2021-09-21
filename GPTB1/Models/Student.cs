@@ -7,11 +7,12 @@ using System.Web;
 
 namespace GPTB1.Models
 {
-    [Table("Accounts")]
-    public class Account
+   
+    public class Student
     {
         [Key]
-        public string Username { get; set; }
+        public string StudentID { get; set; }
+        public string Studentname { get; set; }
         public string Password { get; set; }
     }
 }

@@ -12,12 +12,16 @@ namespace GPTB1.Models
         public LTQLDbContext() : base("name=LTQLDbContext")
         {
         }
+        public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<Account> Accounts { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Account>()
             .Property(e => e.Username)
             .IsUnicode(false);
+            modelBuilder.Entity<Student>()
+                .Property(e => e.StudentID)
+                 .IsUnicode(false);
         }
     }
 }
